@@ -6,7 +6,7 @@ import ItemsNotes from "./ItemsNotes";
 const Notes = ({ notes, deleteNote, archiveNote }) => {
   const notesArchive = !notes.length
     ? []
-    : notes.filter((notes) => notes.isArchived === true);
+    : notes.filter((notes) => notes.archived === true);
 
   return (
     <div className="main">
@@ -29,10 +29,5 @@ const Notes = ({ notes, deleteNote, archiveNote }) => {
   );
 };
 
-Notes.propTypes = {
-  notes: PropTypes.array.isRequired,
-  deleteNote: PropTypes.func.isRequired,
-  archiveNote: PropTypes.func.isRequired,
-};
 
 export default Notes;

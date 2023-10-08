@@ -6,11 +6,6 @@ class FormEdit extends React.Component {
     this.state = {
       title: this.props.note.title,
       body: this.props.note.body,
-      titleLimit: {
-        inputTitle: "",
-        limit: 50,
-        char: 50,
-      },
     };
   }
 

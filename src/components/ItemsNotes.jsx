@@ -12,23 +12,10 @@ const ItemsNotes = ({ notes, deleteNote, archiveNote, editNote }) => {
       <div className='actions'>
         <button onClick={() => deleteNote(notes.id)}>Delete</button>
         <button onClick={() => editNote(notes.id)}>Edit</button>
-        <button onClick={() => archiveNote(notes.id)}>{!notes.isArchived ? 'Archive' : 'Unarchive'}</button>
+        <button onClick={() => archiveNote(notes.id)}>{!notes.archived? 'Archive' : 'Unarchive'}</button>
       </div>
     </div>
   );
-};
-
-ItemsNotes.propTypes = {
-  notes: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    createdAt: PropTypes.string.isRequired,
-    body: PropTypes.string.isRequired,
-    id: PropTypes.number.isRequired,
-    isArchived: PropTypes.bool.isRequired,
-  }).isRequired,
-  deleteNote: PropTypes.func.isRequired,
-  archiveNote: PropTypes.func.isRequired,
-  editNote: PropTypes.func.isRequired,
 };
 
 export default ItemsNotes;

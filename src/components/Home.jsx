@@ -45,10 +45,10 @@ class Home extends React.Component {
     this.setState((prevState) => {
       return {
         notes: prevState.notes.map((note) =>
-          note.id === id ? { ...note, isArchived: !note.isArchived } : note
+          note.id === id ? { ...note, archived: !note.archived } : note
         ),
         search: prevState.search.map((note) =>
-          note.id === id ? { ...note, isArchived: !note.isArchived } : note
+          note.id === id ? { ...note, archived: !note.archived } : note
         ),
       };
     });
@@ -63,7 +63,7 @@ class Home extends React.Component {
             id: Date.now(),
             title,
             body,
-            isArchived: false,
+            archived: false,
             createdAt: new Date().toISOString(),
           },
         ],
@@ -73,7 +73,7 @@ class Home extends React.Component {
             id: Date.now(),
             title,
             body,
-            isArchived: false,
+            archived: false,
             createdAt: new Date().toISOString(),
           },
         ],

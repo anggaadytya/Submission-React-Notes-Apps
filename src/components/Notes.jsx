@@ -51,7 +51,7 @@ class Notes extends React.Component {
     const { notes, deleteNote, archiveNote, addNotes, editNote } = this.props;
     const notesActive = !notes.length
       ? []
-      : notes.filter((note) => note.isArchived === false);
+      : notes.filter((note) => note.archived === false);
 
     return (
       <div className="main">
