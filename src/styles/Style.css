@@ -1,0 +1,276 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: whitesmoke;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  gap: 1rem;
+  height: 100vh;
+}
+
+.main {
+  margin: 1rem 2rem;
+}
+
+.active-title {
+  font-size: 1rem;
+  font-weight: bold;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.button-add {
+  background: #000;
+  padding: 0.3rem 0.8rem;
+  color: white;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.button-add:hover {
+  opacity: 0.8;
+  cursor: pointer;
+  transition: all;
+  transform: scale(1.1);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 1rem;
+  padding: 1rem 0;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+header form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.searchInput {
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 10px;
+  border: 1px solid black;
+  padding: 0.5rem 1rem;
+}
+
+header button {
+  background: #000;
+  padding: 0.5rem 1rem;
+  color: white;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 1px solid black;
+  letter-spacing: 2px;
+}
+
+header button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+  transition: all;
+  transform: scale(1.1);
+}
+
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.formInput {
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px 20px;
+  width: 80%;
+  margin: 15% auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+}
+
+.close {
+  cursor: pointer;
+  transition: all;
+}
+
+.noteInput {
+  text-align: end;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.titleInput {
+  font-size: 1.5rem;
+  font-weight: 700;
+  border-radius: 5px;
+  border: solid 1px black;
+}
+
+.bodyInput {
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 5px;
+  border: solid 1px black;
+  height: 150px;
+}
+
+.buttonInput {
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  border: solid 1px black;
+  height: 50px;
+  letter-spacing: 2px;
+  background: #000;
+  color: white;
+}
+
+.active-notes {
+  height: auto;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  justify-content: center;
+}
+
+.item {
+  position: relative;
+  height: 350px;
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+}
+
+.content {
+  /* text-align: justify; */
+  text-justify: inter-word;
+  position: absolute;
+  margin-right: 10px;
+  top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.actions {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.actions button {
+  background: #000;
+  padding: 0.4rem 0.5rem;
+  color: white;
+  border-radius: 10px;
+  border: 1px solid black;
+  letter-spacing: 2px;
+}
+
+.actions button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+  transition: all;
+  transform: scale(1.1);
+}
+
+.loader {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 30vh auto;
+  z-index: 9999;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .logo {
+    display: none;
+  }
+
+  .active-notes {
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 0;
+  }
+
+  .item {
+    height: 380px;
+  }
+
+  .modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  .formInput {
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px 20px;
+    width: 95%;
+    margin: 35% auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  
+  .item {
+    height: 400px;
+  }
+ 
+  
+}
